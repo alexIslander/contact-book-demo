@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactViewComponent } from './contact-view/contact-view.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ContactViewComponent } from './contact-view/contact-view.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

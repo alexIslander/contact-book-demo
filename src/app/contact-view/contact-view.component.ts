@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {Contact} from '../contact';
 
 @Component({
   selector: 'app-contact-view',
@@ -6,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-view.component.css']
 })
 export class ContactViewComponent implements OnInit {
+
+  @Input()
+  selectedContact?: Observable<Contact | undefined>;
 
   constructor() { }
 

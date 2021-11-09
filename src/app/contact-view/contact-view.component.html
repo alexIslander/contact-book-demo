@@ -1,1 +1,10 @@
-<p>contact-view works!</p>
+<div *ngIf="selectedContact | async as contact; else noElement">
+  <p><b>Firstname:</b> {{ contact.firstName }}</p>
+  <p><b>Lastname:</b> {{ contact.lastName }}</p>
+  <p><b>Phone:</b> {{ contact.phone }}</p>
+  <p><b>Email:</b> {{ contact.email }}</p>
+  <p><b>Address:</b> {{ contact.address }}</p>
+</div>
+<ng-template #noElement>
+  <p>Nothing to display.</p>
+</ng-template>
