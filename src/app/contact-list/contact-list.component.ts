@@ -1,28 +1,31 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
 import {Contact} from '../contact';
+import {select, Store} from '@ngrx/store';
+import {ContactState} from '../store/reducer/contact.reducer';
+import {getContacts} from '../store/selector/contact.selectors';
+import {filter} from 'rxjs/operators';
+import {selectedContact} from '../store/action/contact.actions';
 
 @Component({
   selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
   styleUrls: ['./contact-list.component.css']
 })
-export class ContactListComponent implements OnInit {
+export class ContactListComponent {
 
-  @Input()
-  contacts?: Observable<Contact[] | undefined>;
-
-  @Input()
-  contactSubject?: BehaviorSubject<Contact | undefined>;
+  contacts$?: Observable<Contact[] | undefined>;
   selectedContact?: Contact;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private store: Store<ContactState>) {
+    this.contacts$ = this.store.pipe(
+      select(getContacts),
+      filter(contacts => contacts.length > 0)
+    );
   }
 
   onSelect(contact: Contact): void {
     this.selectedContact = contact;
-    this.contactSubject?.next(contact);
+    this.store.dispatch(selectedContact(contact));
   }
 }

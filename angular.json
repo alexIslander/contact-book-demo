@@ -110,5 +110,8 @@
       }
     }
   },
-  "defaultProject": "contact-book-demo"
+  "defaultProject": "contact-book-demo",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

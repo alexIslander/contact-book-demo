@@ -1,4 +1,4 @@
-<div *ngIf="selectedContact | async as contact; else noElement">
+<div *ngIf="selectedContact$ | async as contact; else noElement">
   <p><b>Firstname:</b> {{ contact.firstName }}</p>
   <p><b>Lastname:</b> {{ contact.lastName }}</p>
   <p><b>Phone:</b> {{ contact.phone }}</p>

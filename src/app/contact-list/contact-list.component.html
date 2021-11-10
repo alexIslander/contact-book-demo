@@ -1,4 +1,4 @@
-<table id="customers" *ngIf="contacts | async as contactList; else noElement">
+<table id="customers" *ngIf="contacts$ | async as contactList; else noElement">
   <tr class="head">
     <th>FirstName</th>
     <th>LastName</th>

@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactViewComponent } from './contact-view.component';
+import {provideMockStore} from '@ngrx/store/testing';
+import {contactFeatureKey} from '../store/reducer/contact.reducer';
 
 describe('ContactViewComponent', () => {
   let component: ContactViewComponent;
@@ -8,7 +10,8 @@ describe('ContactViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ContactViewComponent ]
+      declarations: [ ContactViewComponent ],
+      providers: [provideMockStore({initialState: {[contactFeatureKey]: {contacts: [], selectedContact: undefined}}})]
     })
     .compileComponents();
   });

@@ -51,19 +51,19 @@
     <div class="box add-box">
       <div id="contactAddContainer">
         <h2>Add contact</h2>
-        <app-contact-form (contactEmitter)="addContact($event)"></app-contact-form>
+        <app-contact-form></app-contact-form>
       </div>
     </div>
     <div class="box list-box">
       <div id="contactListContainer">
         <h2>Contacts</h2>
-        <app-contact-list [contacts]="contacts$" [contactSubject]="subject"></app-contact-list>
+        <app-contact-list></app-contact-list>
       </div>
     </div>
     <div class="box view-box">
       <div id="contactViewContainer">
         <h2>View Contact</h2>
-        <app-contact-view [selectedContact]="contact$"></app-contact-view>
+        <app-contact-view></app-contact-view>
       </div>
     </div>
   </div>
