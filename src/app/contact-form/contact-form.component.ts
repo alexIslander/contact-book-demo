@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {Contact} from '../contact';
 import {Store} from '@ngrx/store';
 import {ContactState} from '../store/reducer/contact.reducer';
@@ -10,7 +10,7 @@ import {addContact} from '../store/action/contact.actions';
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.css']
 })
-export class ContactFormComponent {
+export class ContactFormComponent{
 
   constructor(private store: Store<ContactState>) { }
 

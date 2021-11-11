@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit(contactForm); contactForm.reset()" #contactForm="ngForm">
+<form name="contactForm" (ngSubmit)="onSubmit(contactForm); contactForm.reset()" #contactForm="ngForm">
   <label for="firstName">FirstName</label>
   <input type="text" class="form-control" id="firstName"
          required name="firstName" ngModel>
@@ -19,6 +19,6 @@
   <input type="text" class="form-control" id="address"
          required name="address" ngModel>
 
-  <input type="submit" [disabled]="!contactForm.form.valid" value="Submit"/>
+  <input id="submitButton" type="submit" [disabled]="!contactForm.form.valid" value="Submit"/>
 
 </form>

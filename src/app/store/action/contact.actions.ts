@@ -7,7 +7,7 @@ export const addContact = createAction(
 );
 
 export const addContactSuccess = createAction(
-  '[Contact] Add Contacts Success',
+  '[Contact] Add Contact Success',
   (contact: Contact) => ({contact})
 );
 

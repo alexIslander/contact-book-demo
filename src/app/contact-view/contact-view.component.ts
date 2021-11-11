@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Contact} from '../contact';
 import {select, Store} from '@ngrx/store';

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,7 +29,6 @@ import {reducer} from './store/reducer/contact.reducer';
     EffectsModule.forRoot([ContactEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
